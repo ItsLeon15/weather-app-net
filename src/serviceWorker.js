@@ -15,21 +15,21 @@ export function register(config) {
   }
 }
 
-function registerValidSW(swUrl, config) {
-  navigator.serviceWorker
-    .register(swUrl)
-    .then(registration => {
-      registration.onupdatefound = () => {
-        const installingWorker = registration.installing;
-        if (installingWorker == null) {
-          return;
-        }
-      };
-    })
-    .catch(error => {
-      console.error('Error during service worker registration:', error);
-    });
-}
+//function registerValidSW(swUrl, config) {
+//  navigator.serviceWorker
+//    .register(swUrl)
+//    .then(registration => {
+//      registration.onupdatefound = () => {
+//        const installingWorker = registration.installing;
+//        if (installingWorker == null) {
+//          return;
+//        }
+//      };
+//    })
+//    .catch(error => {
+//      console.error('Error during service worker registration:', error);
+//    });
+//}
 
 //function checkValidServiceWorker(swUrl, config) {
 //  fetch(swUrl, {
