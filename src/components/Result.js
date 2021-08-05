@@ -264,7 +264,7 @@ const Result = ({ weather }) => {
           <SmallLabel align="center" weight="400">
             {humidity}%
           </SmallLabel>
-          <Text align="center">Rain</Text>
+          <Text align="center">Humidity</Text>
         </WeatherDetail>
         <WeatherDetail>
           <SmallLabel align="center" weight="400">
