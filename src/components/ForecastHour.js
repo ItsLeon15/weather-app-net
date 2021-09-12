@@ -90,48 +90,70 @@ const ForecastHour = props => {
     daynum = "9"
     daysssss = "th"
   } else if (day === "10") {
+    daynum = "10"
     daysssss = "th"
   } else if (day === "11") {
+    daynum = "11"
     daysssss = "th"
   } else if (day === "12") {
+    daynum = "12"
     daysssss = "th"
   } else if (day === "13") {
+    daynum = "13"
     daysssss = "th"
   } else if (day === "14") {
+    daynum = "14"
     daysssss = "th"
   } else if (day === "15") {
+    daynum = "15"
     daysssss = "th"
   } else if (day === "16") {
+    daynum = "16"
     daysssss = "th"
   } else if (day === "17") {
+    daynum = "17"
     daysssss = "th"
   } else if (day === "18") {
+    daynum = "18"
     daysssss = "th"
   } else if (day === "19") {
+    daynum = "19"
     daysssss = "th"
   } else if (day === "20") {
+    daynum = "20"
     daysssss = "th"
   } else if (day === "21") {
+    daynum = "21"
     daysssss = "st"
   } else if (day === "22") {
+    daynum = "22"
     daysssss = "nd"
   } else if (day === "23") {
+    daynum = "23"
     daysssss = "rd"
   } else if (day === "24") {
+    daynum = "24"
     daysssss = "th"
   } else if (day === "25") {
+    daynum = "25"
     daysssss = "th"
   } else if (day === "26") {
+    daynum = "26"
     daysssss = "th"
   } else if (day === "27") {
+    daynum = "27"
     daysssss = "th"
   } else if (day === "28") {
+    daynum = "28"
     daysssss = "th"
   } else if (day === "29") {
+    daynum = "29"
     daysssss = "th"
   } else if (day === "30") {
+    daynum = "30"
     daysssss = "th"
   } else if (day === "31") {
+    daynum = "31"
     daysssss = "st"
   }
 
