@@ -100,7 +100,7 @@ class App extends React.Component {
           'August',
           'September',
           'October',
-          'Nocvember',
+          'November',
           'December',
         ];
         const days = [
