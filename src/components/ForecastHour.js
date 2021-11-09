@@ -57,7 +57,7 @@ const ForecastHour = props => {
     'August',
     'September',
     'October',
-    'Nocvember',
+    'November',
     'December',
   ];
 
