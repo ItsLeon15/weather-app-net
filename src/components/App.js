@@ -4,6 +4,7 @@ import SearchCity from './SearchCity';
 import device from '../responsive/Device';
 import Result from './Result';
 import NotFound from './NotFound';
+import  nodeGeocoder from 'node-geocoder';
 
 const AppTitle = styled.h1`
   display: block;
@@ -76,9 +77,31 @@ class App extends React.Component {
   handleSearchCity = e => {
     e.preventDefault();
     const { value } = this.state;
-    const APIkey = "bc12083e70d2d22298c2df1cec7101d9";
+    
+    
+    
+    
+    
+    
+    let options = {
+      provider: 'openstreetmap'
+    };
+    
+    let geoCoder = nodeGeocoder(options);
+    
+    
+    geoCoder.geocode(value)
+      .then((valueoutput)=> {
+          let latitude = valueoutput[0].latitude;
+          let longitude = valueoutput[0].longitude;
+    
+    
+    let deznuts = lat;
+    
+    const APIkey = "33c92b0552e0eea71460739025382726";
     const units = "metric";
-    const weather = `https://api.openweathermap.org/data/2.5/weather?q=${value}&APPID=${APIkey}&units=${units}`;
+    //const weather = `https://api.openweathermap.org/data/2.5/weather?q=${value}&APPID=${APIkey}&units=${units}`;
+    const weather = `https://api.openweathermap.org/data/2.5/onecall?&units=${units}&exclude=minutely&appid=${APIkey}&lat=${latitude}&lon=${longitude}`;
     const forecast = `https://api.openweathermap.org/data/2.5/forecast/?q=${value}&APPID=${APIkey}&units=${units}`;
     
     Promise.all([fetch(weather), fetch(forecast)])
@@ -161,6 +184,7 @@ class App extends React.Component {
           error: true,
           weatherInfo: null,
         });
+      });
       });
   };
 
