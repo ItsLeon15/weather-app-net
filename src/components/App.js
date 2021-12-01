@@ -95,9 +95,7 @@ class App extends React.Component {
           let latitude = valueoutput[0].latitude;
           let longitude = valueoutput[0].longitude;
     
-    
-    let deznuts = lat;
-    
+       
     const APIkey = "33c92b0552e0eea71460739025382726";
     const units = "metric";
     //const weather = `https://api.openweathermap.org/data/2.5/weather?q=${value}&APPID=${APIkey}&units=${units}`;
