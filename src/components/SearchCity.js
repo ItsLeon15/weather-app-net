@@ -68,7 +68,7 @@ const SearchIcon = styled.span`
 const SearchCity = ({ submit, value, change, showResult }) => {
   return (
     <>
-      <SearchBar showResult={showResult} onSubmit={submit}>
+      <SearchBar showResult={showResult} onChange={submit}>
         <SearchInput type="text" value={value} placeholder="Enter city" onChange={change} />
         <SearchIcon>
           <FontAwesomeIcon icon={faSearch} />
@@ -77,6 +77,7 @@ const SearchCity = ({ submit, value, change, showResult }) => {
     </>
   );
 };
+
 
 SearchCity.propTypes = {
   submit: PropTypes.func.isRequired,
