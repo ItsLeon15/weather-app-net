@@ -16,7 +16,6 @@ const AppTitle = styled.h1`
   color: #ffffff;
   transition: 0.3s 1.4s;
   opacity: ${({ showLabel }) => (showLabel ? 1 : 0)};
-
   ${({ secondary }) =>
     secondary &&
     `
@@ -42,7 +41,6 @@ const AppTitle = styled.h1`
     }
     
   `}
-
   ${({ showResult }) =>
     showResult &&
     `
@@ -72,15 +70,16 @@ class App extends React.Component {
       value: e.target.value,
     });
   };
-
+  
   handleSearchCity = e => {
     e.preventDefault();
-    const { value } = this.state;       
+    const { value } = this.state; 
+    console.log(e.target.value)
     const APIkey = "33c92b0552e0eea71460739025382726";
     const units = "metric";
-    const weather = `https://api.openweathermap.org/data/2.5/weather?q=${value}&APPID=${APIkey}&units=${units}`;
+    const weather = `https://api.openweathermap.org/data/2.5/weather?q=${e.target.value}&APPID=${APIkey}&units=${units}`;
     //const weather = `https://api.openweathermap.org/data/2.5/onecall?&units=${units}&exclude=minutely&appid=${APIkey}&lat=${latitude}&lon=${longitude}`;
-    const forecast = `https://api.openweathermap.org/data/2.5/forecast/?q=${value}&APPID=${APIkey}&units=${units}`;
+    const forecast = `https://api.openweathermap.org/data/2.5/forecast/?q=${e.target.value}&APPID=${APIkey}&units=${units}`;
     
     Promise.all([fetch(weather), fetch(forecast)])
       .then(([res1, res2]) => {
