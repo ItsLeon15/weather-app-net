@@ -73,8 +73,6 @@ class App extends React.Component {
   
   handleSearchCity = e => {
     e.preventDefault();
-    const { value } = this.state; 
-    console.log(e.target.value)
     const APIkey = "33c92b0552e0eea71460739025382726";
     const units = "metric";
     const weather = `https://api.openweathermap.org/data/2.5/weather?q=${e.target.value}&APPID=${APIkey}&units=${units}`;
