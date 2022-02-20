@@ -17,8 +17,8 @@ const AppTitle = styled.h1`
   transition: 0.3s 1.4s;
   opacity: ${({ showLabel }) => (showLabel ? 1 : 0)};
   ${({ secondary }) =>
-    secondary &&
-    `
+        secondary &&
+        `
     opacity: 1;
     height: auto;
     position: relative;
@@ -42,11 +42,46 @@ const AppTitle = styled.h1`
     
   `}
   ${({ showResult }) =>
-    showResult &&
-    `
+        showResult &&
+        `
     opacity: 0;
     visibility: hidden;
     top: 10%;
+  `}
+`; const AppTitl2e = styled.h2`
+  display: block;
+  height: 0px;
+  margin: 0;
+  padding: 0px 0;
+  font-size: 1px;
+  font-weight: 400;
+  color: #ffffff;
+  transition: 0.3s 1.4s;
+  opacity: ${({ showLabel }) => (showLabel ? 1 : 0)};
+  ${({ secondary }) =>
+        secondary &&
+        `
+    opacity: 0.7;
+    height: auto;
+    position: relative;
+    padding: 20px 0;
+    font-size: 20px;
+    top: 15%;
+    text-align: center;
+    transition: .5s;
+    @media ${device.tablet} {
+      font-size: 10px;
+    }
+    @media ${device.laptop} {
+      font-size: 10px;
+    }
+    @media ${device.laptopL} {
+      font-size: 15px;
+    }
+    @media ${device.desktop} {
+      font-size: 20px;
+    }
+    
   `}
 `;
 
@@ -168,9 +203,9 @@ class App extends React.Component {
       <>
         <AppTitle showLabel={(weatherInfo || error) && true}></AppTitle>
         <WeatherWrapper>
-          <AppTitle secondary showResult={(weatherInfo || error) && true}>
-            Weather
-          </AppTitle>
+                <AppTitle secondary showResult={(weatherInfo || error) && true}>Weather<br /></AppTitle>
+                <AppTitl2e secondary>Now a branch of Platinum Host Ltd. https://platinumhost.xyz</AppTitl2e>
+                <br /><br /><br /><br /><br /><br /><br /><br />
 
           <SearchCity
             value={value}
