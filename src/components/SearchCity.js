@@ -6,7 +6,7 @@ import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import device from '../responsive/Device';
 
 const SearchBar = styled.form`
-  top: ${({ showResult }) => (showResult ? '0%' : '30%')};
+  top: ${({ showResult }) => (showResult ? '0%' : '18%')};
   position: relative;
   margin: 0 auto;
   max-width: 500px;
