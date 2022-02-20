@@ -48,12 +48,15 @@ const AppTitle = styled.h1`
     visibility: hidden;
     top: 10%;
   `}
-`; const AppTitl2e = styled.h2`
+`;
+
+
+const AppTitl2e = styled.h1`
   display: block;
   height: 0px;
   margin: 0;
   padding: 0px 0;
-  font-size: 1px;
+  font-size: 20px;
   font-weight: 400;
   color: #ffffff;
   transition: 0.3s 1.4s;
@@ -61,12 +64,12 @@ const AppTitle = styled.h1`
   ${({ secondary }) =>
         secondary &&
         `
-    opacity: 0.7;
+    opacity: 1;
     height: auto;
     position: relative;
     padding: 20px 0;
-    font-size: 20px;
-    top: 15%;
+    font-size: 30px;
+    top: 18%;
     text-align: center;
     transition: .5s;
     @media ${device.tablet} {
@@ -94,131 +97,129 @@ const WeatherWrapper = styled.div`
 `;
 
 class App extends React.Component {
-  state = {
-    value: '',
-    weatherInfo: null,
-    error: false,
-  };
+    state = {
+        value: '',
+        weatherInfo: null,
+        error: false,
+    };
 
-  handleInputChange = e => {
-    this.setState({
-      value: e.target.value,
-    });
-  };
-  
-  handleSearchCity = e => {
-    e.preventDefault();
-    const APIkey = "33c92b0552e0eea71460739025382726";
-    const units = "metric";
-    const weather = `https://api.openweathermap.org/data/2.5/weather?q=${e.target.value}&APPID=${APIkey}&units=${units}`;
-    //const weather = `https://api.openweathermap.org/data/2.5/onecall?&units=${units}&exclude=minutely&appid=${APIkey}&lat=${latitude}&lon=${longitude}`;
-    const forecast = `https://api.openweathermap.org/data/2.5/forecast/?q=${e.target.value}&APPID=${APIkey}&units=${units}`;
-    
-    Promise.all([fetch(weather), fetch(forecast)])
-      .then(([res1, res2]) => {
-        if (res1.ok && res2.ok) {
-          return Promise.all([res1.json(), res2.json()]);
-        }
-        throw Error(res1.statusText, res2.statusText);
-      })
-      .then(([data1, data2]) => {
-        const months = [
-          'January',
-          'February',
-          'March',
-          'April',
-          'May',
-          'June',
-          'July',
-          'August',
-          'September',
-          'October',
-          'November',
-          'December',
-        ];
-        const days = [
-          'Sunday', 
-          'Monday', 
-          'Tuesday', 
-          'Wednesday', 
-          'Thursday', 
-          'Friday', 
-          'Saturday'
-        ];
-        const daysshort = [
-          'Sun', 
-          'Mon', 
-          'Tue', 
-          'Wed', 
-          'Thu', 
-          'Fri', 
-          'Sat'
-        ];
-
-        const currentDate = new Date();
-        const date = `${days[currentDate.getDay()]} ${currentDate.getDate()} ${
-          months[currentDate.getMonth()]
-        }`;
-        const dateshort = `${daysshort[currentDate.getDay()]} ${currentDate.getDate()} ${
-          months[currentDate.getMonth()]
-        }`;
-        const sunset = new Date(data1.sys.sunset * 1000).toLocaleTimeString().slice(0, 4);
-        const sunrise = new Date(data1.sys.sunrise * 1000).toLocaleTimeString().slice(0, 4);
-
-        const weatherInfo = {
-          city: data1.name,
-          country: data1.sys.country,
-          date,
-          dateshort,
-          description: data1.weather[0].description,
-          main: data1.weather[0].main,
-          temp: data1.main.temp,
-          highestTemp: data1.main.temp_max,
-          lowestTemp: data1.main.temp_min,
-          sunrise,
-          sunset,
-          clouds: data1.clouds.all,
-          humidity: data1.main.humidity,
-          wind: data1.wind.speed,
-          forecast: data2.list,
-        };
+    handleInputChange = e => {
         this.setState({
-          weatherInfo,
-          error: false,
+            value: e.target.value,
         });
-      })
-      .catch(error => {
-        console.log(error);
+    };
 
-        this.setState({
-          error: true,
-          weatherInfo: null,
-        });
-      });
-  };
+    handleSearchCity = e => {
+        e.preventDefault();
+        const APIkey = "33c92b0552e0eea71460739025382726";
+        const units = "metric";
+        const weather = `https://api.openweathermap.org/data/2.5/weather?q=${e.target.value}&APPID=${APIkey}&units=${units}`;
+        //const weather = `https://api.openweathermap.org/data/2.5/onecall?&units=${units}&exclude=minutely&appid=${APIkey}&lat=${latitude}&lon=${longitude}`;
+        const forecast = `https://api.openweathermap.org/data/2.5/forecast/?q=${e.target.value}&APPID=${APIkey}&units=${units}`;
 
-  render() {
-    const { value, weatherInfo, error } = this.state;
-    return (
-      <>
-        <AppTitle showLabel={(weatherInfo || error) && true}></AppTitle>
-        <WeatherWrapper>
-                <AppTitle secondary showResult={(weatherInfo || error) && true}>Weather<br /></AppTitle>
-                <AppTitl2e secondary>Now a branch of Platinum Host Ltd. https://platinumhost.xyz</AppTitl2e>
-                <br /><br /><br /><br /><br /><br /><br /><br />
+        Promise.all([fetch(weather), fetch(forecast)])
+            .then(([res1, res2]) => {
+                if (res1.ok && res2.ok) {
+                    return Promise.all([res1.json(), res2.json()]);
+                }
+                throw Error(res1.statusText, res2.statusText);
+            })
+            .then(([data1, data2]) => {
+                const months = [
+                    'January',
+                    'February',
+                    'March',
+                    'April',
+                    'May',
+                    'June',
+                    'July',
+                    'August',
+                    'September',
+                    'October',
+                    'November',
+                    'December',
+                ];
+                const days = [
+                    'Sunday',
+                    'Monday',
+                    'Tuesday',
+                    'Wednesday',
+                    'Thursday',
+                    'Friday',
+                    'Saturday'
+                ];
+                const daysshort = [
+                    'Sun',
+                    'Mon',
+                    'Tue',
+                    'Wed',
+                    'Thu',
+                    'Fri',
+                    'Sat'
+                ];
 
-          <SearchCity
-            value={value}
-            showResult={(weatherInfo || error) && true}
-            change={this.handleInputChange}
-            submit={this.handleSearchCity}
-          />
-          {weatherInfo && <Result weather={weatherInfo} />}
-          {error && <NotFound error={error} />}
-          </WeatherWrapper>
-      </>
-    );
-  }
+                const currentDate = new Date();
+                const date = `${days[currentDate.getDay()]} ${currentDate.getDate()} ${months[currentDate.getMonth()]
+                    }`;
+                const dateshort = `${daysshort[currentDate.getDay()]} ${currentDate.getDate()} ${months[currentDate.getMonth()]
+                    }`;
+                const sunset = new Date(data1.sys.sunset * 1000).toLocaleTimeString().slice(0, 4);
+                const sunrise = new Date(data1.sys.sunrise * 1000).toLocaleTimeString().slice(0, 4);
+
+                const weatherInfo = {
+                    city: data1.name,
+                    country: data1.sys.country,
+                    date,
+                    dateshort,
+                    description: data1.weather[0].description,
+                    main: data1.weather[0].main,
+                    temp: data1.main.temp,
+                    highestTemp: data1.main.temp_max,
+                    lowestTemp: data1.main.temp_min,
+                    sunrise,
+                    sunset,
+                    clouds: data1.clouds.all,
+                    humidity: data1.main.humidity,
+                    wind: data1.wind.speed,
+                    forecast: data2.list,
+                };
+                this.setState({
+                    weatherInfo,
+                    error: false,
+                });
+            })
+            .catch(error => {
+                console.log(error);
+
+                this.setState({
+                    error: true,
+                    weatherInfo: null,
+                });
+            });
+    };
+
+    render() {
+        const { value, weatherInfo, error } = this.state;
+        return (
+            <>
+                <AppTitle showLabel={(weatherInfo || error) && true}></AppTitle>
+                <WeatherWrapper>
+                    <AppTitle secondary showResult={(weatherInfo || error) && true}>Weather<br /></AppTitle>
+                    <AppTitl2e secondary>Now a branch of Platinum Host Ltd. https://platinumhost.xyz</AppTitl2e>
+                    <br /><br /><br /><br /><br /><br /><br /><br />
+
+                    <SearchCity
+                        value={value}
+                        showResult={(weatherInfo || error) && true}
+                        change={this.handleInputChange}
+                        submit={this.handleSearchCity}
+                    />
+                    {weatherInfo && <Result weather={weatherInfo} />}
+                    {error && <NotFound error={error} />}
+                </WeatherWrapper>
+            </>
+        );
+    }
 }
 
 export default App;
