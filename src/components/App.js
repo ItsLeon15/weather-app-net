@@ -50,44 +50,6 @@ const AppTitle = styled.h1`
   `}
 `;
 
-
-const AppTitl2e = styled.h1`
-  display: block;
-  height: 0px;
-  margin: 0;
-  padding: 0px 0;
-  font-size: 20px;
-  font-weight: 400;
-  color: #ffffff;
-  transition: 0.3s 1.4s;
-  opacity: ${({ showLabel }) => (showLabel ? 1 : 0)};
-  ${({ secondary }) =>
-        secondary &&
-        `
-    opacity: 1;
-    height: auto;
-    position: relative;
-    padding: 20px 0;
-    font-size: 30px;
-    top: 18%;
-    text-align: center;
-    transition: .5s;
-    @media ${device.tablet} {
-      font-size: 10px;
-    }
-    @media ${device.laptop} {
-      font-size: 10px;
-    }
-    @media ${device.laptopL} {
-      font-size: 15px;
-    }
-    @media ${device.desktop} {
-      font-size: 20px;
-    }
-    
-  `}
-`;
-
 const WeatherWrapper = styled.div`
   max-width: 1500px;
   margin: 0 auto;
