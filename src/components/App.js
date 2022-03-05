@@ -205,7 +205,7 @@ class App extends React.Component {
                 <AppTitle showLabel={(weatherInfo || error) && true}></AppTitle>
                 <WeatherWrapper>
                     <AppTitle secondary showResult={(weatherInfo || error) && true}>Weather<br /></AppTitle>
-                    <AppTitl2e secondary>Now a branch of Platinum Host Ltd. https://platinumhost.xyz</AppTitl2e>
+                    //<AppTitl2e secondary>Now a branch of Platinum Host Ltd. https://platinumhost.xyz</AppTitl2e>
                     <br /><br /><br /><br /><br /><br /><br /><br />
 
                     <SearchCity
