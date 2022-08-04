@@ -145,7 +145,7 @@ class App extends React.Component {
                     wind: data1.wind.speed,
                     forecast: data2.list,
                 };
-                console.log(weatherInfo);
+                console.log(data1);
                 this.setState({
                     weatherInfo,
                     error: false,
