@@ -161,8 +161,8 @@ class App extends React.Component {
                 }
                 // const note = document.querySelector('bgImg');
                 // note = 'url(' + thisImgNew + ')';
-                console.log(document.querySelector('bgImg'));
-        
+                console.log(this.props);
+                
                 console.log("Weather: " + weather);
                 console.log("Image: " + thisImgNew);
 
