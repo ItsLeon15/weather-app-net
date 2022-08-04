@@ -152,12 +152,12 @@ class App extends React.Component {
                 let weather = data1.weather[0].main;
                 const thisImg = ["https://wallpaperaccess.com/full/2033952.jpg", "", ""];
                 var thisImgNew;
-                if (weather == "Clouds") {
-                    var thisImgNew = thisImg[0];
-                } else if (weather == "") {
-                    var thisImgNew = thisImg[1];
-                } else if (weather == "") {
-                    var thisImgNew = thisImg[2];
+                if (weather === "Clouds") {
+                    thisImgNew = thisImg[0];
+                } else if (weather === "") {
+                    thisImgNew = thisImg[1];
+                } else if (weather === "") {
+                    thisImgNew = thisImg[2];
                 }
                 <div class="background" id="bgImg"></div>
                 document.getElementById('bgImg').style.backgroundImage = 'url(' + thisImgNew + ')';
