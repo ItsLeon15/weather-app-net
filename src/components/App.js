@@ -159,7 +159,7 @@ class App extends React.Component {
                 } else if (weather === "") {
                     thisImgNew = thisImg[2];
                 }
-                this.refs('bgImg').style.backgroundImage = 'url(' + thisImgNew + ')';
+                document.querySelector('bgImg').style.backgroundImage = 'url(' + thisImgNew + ')';
         
                 console.log("Weather: " + weather);
                 console.log("Image: " + thisImgNew);
