@@ -159,7 +159,6 @@ class App extends React.Component {
                 } else if (weather === "") {
                     thisImgNew = thisImg[2];
                 }
-                <div class="background" id="bgImg"></div>
                 document.getElementById('bgImg').style.backgroundImage = 'url(' + thisImgNew + ')';
         
                 console.log("Weather: " + weather);
@@ -207,6 +206,7 @@ class App extends React.Component {
                     {weatherInfo && <Result weather={weatherInfo} />}
                     {error && <NotFound error={error} />}
                 </WeatherWrapper>
+                <div class="background" id="bgImg"></div>
             </>
         );
     }
