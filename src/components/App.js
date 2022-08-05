@@ -158,7 +158,7 @@ class App extends React.Component {
                     this.setState({ backgroundImage: 'url(' + firstImage[1] + ')' });
                 } else if (weather === "Clear") {
                     this.setState({ backgroundImage: 'url(' + firstImage[2] + ')' });
-                } else {
+                } else if (weather === null) {
                     this.setState({ backgroundImage: 'url(https://wallpaperaccess.com/full/2033952.jpg)' });
                 }
                 
