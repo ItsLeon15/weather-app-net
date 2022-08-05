@@ -171,17 +171,6 @@ class App extends React.Component {
                 console.log("Weather: " + weather);
                 console.log("Image: " + thisImgNew);
 
-
-
-
-
-
-
-
-
-                
-
-
                 this.setState({
                     weatherInfo,
                     error: false,
@@ -198,11 +187,16 @@ class App extends React.Component {
     };
 
     render() {
-        const { value, weatherInfo, error, thisImgNew } = this.state;
-        document.getElementById('bgImg').style.backgroundImage = 'url(./' + thisImgNew + ')';
+        const { value, weatherInfo, error } = this.state;
+        const firstImage = "https://wallpaperaccess.com/full/2033952.jpg";
+        x === "Test";
+        if (x === "Test") {
+            this.setState({ backgroundImage: firstImage });
+          }
 
         return (
             <>
+                <div style={{ backgroundImage: this.state.backgroundImage }} />
                 <AppTitle showLabel={(weatherInfo || error) && true}></AppTitle>
                 <WeatherWrapper>
                     <AppTitle secondary showResult={(weatherInfo || error) && true}>Weather<br /></AppTitle>
@@ -215,7 +209,6 @@ class App extends React.Component {
                     {weatherInfo && <Result weather={weatherInfo} />}
                     {error && <NotFound error={error} />}
                 </WeatherWrapper>
-                <div class="bgImg" id="bgImg"></div>
             </>
         );
     }
