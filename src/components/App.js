@@ -183,7 +183,8 @@ class App extends React.Component {
                         "width":"100%",
                         "height":"100vh",
                         "position":"absolute",
-                        "zIndex":"0"
+                        "zIndex":"0",
+                        "animation":"fadeIn 5s"
                     }}
                 />
                 <AppTitle showLabel={(weatherInfo || error) && true}></AppTitle>
