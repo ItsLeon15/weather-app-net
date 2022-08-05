@@ -174,7 +174,7 @@ class App extends React.Component {
 
     render() {
         const { value, weatherInfo, error } = this.state;
-        this.setState({ backgroundImage: 'url(' + firstImage[0] + ')' });
+        this.setState({ backgroundImage: 'url(https://wallpaperaccess.com/full/2033952.jpg)' });
         return (
             <>
                 <div style={{ backgroundImage: this.state.backgroundImage, "backgroundRepeat":"no-repeat","backgroundPosition":"center center","backgroundSize":"cover","width":"100%","height":"100vh","position":"absolute","zIndex":"0"}}/>
