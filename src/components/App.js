@@ -151,22 +151,17 @@ class App extends React.Component {
 
 
                 let weather = data1.weather[0].main;
-                const thisImg = ["https://wallpaperaccess.com/full/2033952.jpg", "", ""];
+                const firstImage = ["https://wallpaperaccess.com/full/2033952.jpg", "", ""];
                 var thisImgNew;
                 if (weather === "Clouds") {
-                    thisImgNew = thisImg[0];
-                } else if (weather === "") {
-                    thisImgNew = thisImg[1];
-                } else if (weather === "") {
-                    thisImgNew = thisImg[2];
+                    this.setState({ backgroundImage: 'url(' + firstImage[0] + ')' });
+                } else if (weather === "Sun") {
+                    this.setState({ backgroundImage: 'url(' + firstImage[1] + ')' });
+                } else if (weather === "Sunny") {
+                    this.setState({ backgroundImage: 'url(' + firstImage[2] + ')' });
                 } else {
-                    thisImgNew = thisImg[0];
+                    this.setState({ backgroundImage: 'url(' + firstImage[0] + ')' });
                 }
-                // const note = document.querySelector('bgImg');
-                // note = 'url(' + thisImgNew + ')';
-                this.state = {
-                    backgroundImage: `url(${thisImgNew})`,
-                };
                 
                 console.log("Weather: " + weather);
                 console.log("Image: " + thisImgNew);
@@ -188,11 +183,6 @@ class App extends React.Component {
 
     render() {
         const { value, weatherInfo, error } = this.state;
-        const firstImage = "https://wallpaperaccess.com/full/2033952.jpg";
-        var x = "Test";
-        if (x === "Test") {
-            this.setState({ backgroundImage: 'url(' + firstImage + ')' });
-          }
 
         return (
             <>
