@@ -215,6 +215,7 @@ class App extends React.Component {
                     {weatherInfo && <Result weather={weatherInfo} />}
                     {error && <NotFound error={error} />}
                 </WeatherWrapper>
+                <div class="bgImg" id="bgImg"></div>
             </>
         );
     }
