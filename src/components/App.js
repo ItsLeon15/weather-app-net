@@ -158,8 +158,8 @@ class App extends React.Component {
                 }
                 console.log("Weather = " + weather);
 
-                this.setState({ backgroundImage: 'url(https://wallpaperaccess.com/full/2033952.jpg)' });
-                
+                this.setState({ backgroundImage: 'url(' + firstImage[0] + ')' });
+
                 this.setState({
                     weatherInfo,
                     error: false,
