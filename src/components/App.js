@@ -182,7 +182,7 @@ class App extends React.Component {
 
         return (
             <>
-                <div style={{ backgroundImage: this.state.backgroundImage, "backgroundRepeat":"no-repeat","backgroundPosition":"center","backgroundSize":"cover","width":"100%","height":"100vh"}}/>
+                <div style={{ backgroundImage: this.state.backgroundImage, "backgroundRepeat":"no-repeat","backgroundPosition":"center center","backgroundSize":"cover","width":"100%","height":"100vh","position":"absolute","zIndex":"0"}}/>
                 <AppTitle showLabel={(weatherInfo || error) && true}></AppTitle>
                 <WeatherWrapper>
                     <AppTitle secondary showResult={(weatherInfo || error) && true}>Weather<br /></AppTitle>
