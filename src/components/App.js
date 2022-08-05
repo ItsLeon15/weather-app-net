@@ -184,7 +184,6 @@ class App extends React.Component {
 
                 this.setState({
                     weatherInfo,
-                    bgImg: thisImgNew,
                     error: false,
                 });
             })
@@ -216,8 +215,6 @@ class App extends React.Component {
                     {weatherInfo && <Result weather={weatherInfo} />}
                     {error && <NotFound error={error} />}
                 </WeatherWrapper>
-                weatherInfo.main
-                <div style={{backgroundImage: bgImg }}></div>
             </>
         );
     }
