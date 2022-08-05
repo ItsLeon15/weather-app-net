@@ -146,9 +146,6 @@ class App extends React.Component {
                     wind: data1.wind.speed,
                     forecast: data2.list,
                 };
-                console.log(data1.weather[0].main);
-
-
 
                 let weather = data1.weather[0].main;
                 const firstImage = ["https://wallpaperaccess.com/full/2033952.jpg", "", ""];
@@ -161,6 +158,7 @@ class App extends React.Component {
                 } else if (weather === null) {
                     this.setState({ backgroundImage: 'url(https://wallpaperaccess.com/full/2033952.jpg)' });
                 }
+                console.log("Weather = " + weather);
                 
                 this.setState({
                     weatherInfo,
