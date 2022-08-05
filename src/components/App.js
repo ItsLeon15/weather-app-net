@@ -191,7 +191,7 @@ class App extends React.Component {
         const firstImage = "https://wallpaperaccess.com/full/2033952.jpg";
         var x = "Test";
         if (x === "Test") {
-            this.setState({ backgroundImage: firstImage });
+            this.setState({ backgroundImage: 'url(' + firstImage + ')' });
           }
 
         return (
