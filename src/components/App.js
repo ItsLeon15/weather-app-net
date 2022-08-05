@@ -9,7 +9,7 @@ const AppTitle = styled.h1`
   display: block;
   height: 0px;
   margin: 0;
-  padding: 0px 0;
+  padding: 0px 0; 
   font-size: 20px;
   text-transform: uppercase;
   font-weight: 400;
