@@ -189,7 +189,7 @@ class App extends React.Component {
     render() {
         const { value, weatherInfo, error } = this.state;
         const firstImage = "https://wallpaperaccess.com/full/2033952.jpg";
-        x === "Test";
+        var x = "Test";
         if (x === "Test") {
             this.setState({ backgroundImage: firstImage });
           }
