@@ -9,7 +9,7 @@ const AppTitle = styled.h1`
   display: block;
   height: 0px;
   margin: 0;
-  padding: 0px 0; 
+  padding: 0px 0;
   font-size: 20px;
   text-transform: uppercase;
   font-weight: 400;
@@ -76,7 +76,6 @@ class App extends React.Component {
         const APIkey = "33c92b0552e0eea71460739025382726";
         const units = "metric";
         const weather = `https://api.openweathermap.org/data/2.5/weather?q=${e.target.value}&APPID=${APIkey}&units=${units}`;
-        //const weather = `https://api.openweathermap.org/data/2.5/onecall?&units=${units}&exclude=minutely&appid=${APIkey}&lat=${latitude}&lon=${longitude}`;
         const forecast = `https://api.openweathermap.org/data/2.5/forecast/?q=${e.target.value}&APPID=${APIkey}&units=${units}`;
 
         Promise.all([fetch(weather), fetch(forecast)])
@@ -174,10 +173,19 @@ class App extends React.Component {
 
     render() {
         const { value, weatherInfo, error } = this.state;
-        this.setState({ backgroundImage: 'url(https://wallpaperaccess.com/full/2033952.jpg)' });
         return (
             <>
-                <div style={{ backgroundImage: this.state.backgroundImage, "backgroundRepeat":"no-repeat","backgroundPosition":"center center","backgroundSize":"cover","width":"100%","height":"100vh","position":"absolute","zIndex":"0"}}/>
+                <div style=
+                    {{ backgroundImage: this.state.backgroundImage,
+                        "backgroundRepeat":"no-repeat",
+                        "backgroundPosition":"center center",
+                        "backgroundSize":"cover",
+                        "width":"100%",
+                        "height":"100vh",
+                        "position":"absolute",
+                        "zIndex":"0"
+                    }}
+                />
                 <AppTitle showLabel={(weatherInfo || error) && true}></AppTitle>
                 <WeatherWrapper>
                     <AppTitle secondary showResult={(weatherInfo || error) && true}>Weather<br /></AppTitle>
