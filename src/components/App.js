@@ -63,6 +63,7 @@ class App extends React.Component {
         value: '',
         weatherInfo: null,
         error: false,
+        thisImgNew: '',
     };
 
     handleInputChange = e => {
@@ -167,7 +168,6 @@ class App extends React.Component {
                     backgroundImage: `url(${thisImgNew})`,
                 };
                 
-                
                 console.log("Weather: " + weather);
                 console.log("Image: " + thisImgNew);
 
@@ -179,7 +179,7 @@ class App extends React.Component {
 
 
 
-
+                
 
 
                 this.setState({
@@ -199,7 +199,9 @@ class App extends React.Component {
     };
 
     render() {
-        const { value, weatherInfo, error, bgImg } = this.state;
+        const { value, weatherInfo, error, thisImgNew } = this.state;
+        document.getElementById('bgImg').style.backgroundImage = 'url(./' + thisImgNew + ')';
+
         return (
             <>
                 <AppTitle showLabel={(weatherInfo || error) && true}></AppTitle>
@@ -214,6 +216,7 @@ class App extends React.Component {
                     {weatherInfo && <Result weather={weatherInfo} />}
                     {error && <NotFound error={error} />}
                 </WeatherWrapper>
+                weatherInfo.main
                 <div style={{backgroundImage: bgImg }}></div>
             </>
         );
