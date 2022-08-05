@@ -154,9 +154,9 @@ class App extends React.Component {
                 const firstImage = ["https://wallpaperaccess.com/full/2033952.jpg", "", ""];
                 if (weather === "Clouds") {
                     this.setState({ backgroundImage: 'url(' + firstImage[0] + ')' });
-                } else if (weather === "Sun") {
+                } else if (weather === "Haze") {
                     this.setState({ backgroundImage: 'url(' + firstImage[1] + ')' });
-                } else if (weather === "Sunny") {
+                } else if (weather === "Clear") {
                     this.setState({ backgroundImage: 'url(' + firstImage[2] + ')' });
                 } else {
                     this.setState({ backgroundImage: 'url(https://wallpaperaccess.com/full/2033952.jpg)' });
@@ -182,7 +182,7 @@ class App extends React.Component {
 
         return (
             <>
-                <div style={{ backgroundImage: this.state.backgroundImage }} />
+                <div style={{ backgroundImage: this.state.backgroundImage, "height":"100%","backgroundPosition":"center","backgroundRepeat":"no-repeat","backgroundSize":"cover"}}/>
                 <AppTitle showLabel={(weatherInfo || error) && true}></AppTitle>
                 <WeatherWrapper>
                     <AppTitle secondary showResult={(weatherInfo || error) && true}>Weather<br /></AppTitle>
