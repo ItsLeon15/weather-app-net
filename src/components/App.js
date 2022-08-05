@@ -158,12 +158,14 @@ class App extends React.Component {
                     thisImgNew = thisImg[1];
                 } else if (weather === "") {
                     thisImgNew = thisImg[2];
+                } else {
+                    thisImgNew = thisImg[0];
                 }
                 // const note = document.querySelector('bgImg');
                 // note = 'url(' + thisImgNew + ')';
                 this.state = {
                     backgroundImage: `url(${thisImgNew})`,
-                  };
+                };
                 
                 
                 console.log("Weather: " + weather);
@@ -182,6 +184,7 @@ class App extends React.Component {
 
                 this.setState({
                     weatherInfo,
+                    backgroundImage: `url(${thisImgNew})`,
                     error: false,
                 });
             })
