@@ -184,7 +184,7 @@ class App extends React.Component {
 
                 this.setState({
                     weatherInfo,
-                    backgroundImage: `url(${thisImgNew})`,
+                    bgImg: thisImgNew,
                     error: false,
                 });
             })
@@ -199,7 +199,7 @@ class App extends React.Component {
     };
 
     render() {
-        const { value, weatherInfo, error } = this.state;
+        const { value, weatherInfo, error, bgImg } = this.state;
         return (
             <>
                 <AppTitle showLabel={(weatherInfo || error) && true}></AppTitle>
@@ -214,7 +214,7 @@ class App extends React.Component {
                     {weatherInfo && <Result weather={weatherInfo} />}
                     {error && <NotFound error={error} />}
                 </WeatherWrapper>
-                <div class="background" id="bgImg"></div>
+                <div style={{backgroundImage: bgImg }}></div>
             </>
         );
     }
