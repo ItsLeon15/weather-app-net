@@ -148,7 +148,7 @@ class App extends React.Component {
                 let weather = data1.weather[0].main;
                 const firstImage = [
                     "https://w.wallhaven.cc/full/kw/wallhaven-kwo51m.png", // Clouds
-                    "https://images.wallpapersden.com/image/download/4k-foggy-landscape_a2tuZW2UmZqaraWkpJRobWllrWdma2U.jpg", // Haze
+                    "https://wallpapersmug.com/download/1920x1080/209e4e/clouds-dawn-landscape-trees.jpg", // Haze
                     "https://images.hdqwalls.com/download/mountains-landscape-dark-nature-4k-i0-3840x2160.jpg", // Clear
                     "https://i.pinimg.com/originals/37/4f/60/374f60402c4d1ba118dd4e0eca34367c.jpg" // Rain
                 ];
