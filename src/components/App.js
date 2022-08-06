@@ -147,7 +147,7 @@ class App extends React.Component {
 
                 let weather = data1.weather[0].main;
                 const firstImage = [
-                    "https://images.unsplash.com/photo-1471572891026-8ca1e66adf49?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1169&q=80", // Clouds
+                    "https://w.wallhaven.cc/full/kw/wallhaven-kwo51m.png", // Clouds
                     "https://images.wallpapersden.com/image/download/4k-foggy-landscape_a2tuZW2UmZqaraWkpJRobWllrWdma2U.jpg", // Haze
                     "https://images.hdqwalls.com/download/mountains-landscape-dark-nature-4k-i0-3840x2160.jpg", // Clear
                     "https://i.pinimg.com/originals/37/4f/60/374f60402c4d1ba118dd4e0eca34367c.jpg" // Rain
