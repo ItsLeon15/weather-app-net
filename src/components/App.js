@@ -150,8 +150,12 @@ class App extends React.Component {
                     "https://w.wallhaven.cc/full/kw/wallhaven-kwo51m.png", // Clouds
                     "https://wallpapersmug.com/download/1920x1080/209e4e/clouds-dawn-landscape-trees.jpg", // Haze
                     "https://images.hdqwalls.com/download/mountains-landscape-dark-nature-4k-i0-3840x2160.jpg", // Clear
-                    "https://i.pinimg.com/originals/37/4f/60/374f60402c4d1ba118dd4e0eca34367c.jpg" // Rain
+                    "https://i.pinimg.com/originals/37/4f/60/374f60402c4d1ba118dd4e0eca34367c.jpg", // Rain
+                    "https://cdn.wallpapersafari.com/34/88/yTgRnO.jpg" // Mist
                 ];
+
+                // Backup image if weather is not found - https://c.wallhere.com/photos/c5/3c/1920x1080_px_clouds_Dark_Daylight_forest_landscape_mist_nature-653783.jpg
+
                 if (weather === "Clouds") {
                     this.setState({ backgroundImage: 'url(' + firstImage[0] + ')' });
                 } else if (weather === "Haze") {
@@ -160,6 +164,8 @@ class App extends React.Component {
                     this.setState({ backgroundImage: 'url(' + firstImage[2] + ')' });
                 } else if (weather === "Rain") {
                     this.setState({ backgroundImage: 'url(' + firstImage[3] + ')' });
+                } else if (weather === "Mist") {
+                    this.setState({ backgroundImage: 'url(' + firstImage[4] + ')' });
                 }
                 console.log("Weather = " + weather);
 
