@@ -167,7 +167,7 @@ class App extends React.Component {
                     this.setState({ backgroundImage: 'url(' + firstImage[4] + ')' });
                 }
                 console.log("Weather = " + weather);
-                console.log("WeatherInfo = " + data1.weather[0]);
+                console.log("WeatherInfo = " + data1.weather[0].main);
 
                 this.setState({
                     weatherInfo,
