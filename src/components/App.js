@@ -144,7 +144,6 @@ class App extends React.Component {
                     wind: data1.wind.speed,
                     forecast: data2.list,
                 };
-
                 let weather = data1.weather[0].main;
                 const firstImage = [
                     "https://w.wallhaven.cc/full/kw/wallhaven-kwo51m.png", // Clouds
@@ -168,7 +167,7 @@ class App extends React.Component {
                     this.setState({ backgroundImage: 'url(' + firstImage[4] + ')' });
                 }
                 console.log("Weather = " + weather);
-                console.log("WeatherInfo = " + weatherInfo);
+                console.log("WeatherInfo = " + data1.weather[0]);
 
                 this.setState({
                     weatherInfo,
